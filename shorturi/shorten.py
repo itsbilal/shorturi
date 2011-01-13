@@ -2,10 +2,13 @@
 import json
 import urllib2
 
-def googl (longuri):
+def googl (longuri, apikey=None):
 	posturi		= "https://www.googleapis.com/urlshortener/v1/url"
 	headers 	= {'Content-Type' : 'application/json'}
 	data		= {'longUrl' : longuri}
+
+	if apikey is not None:
+		posturi += "?key=" + apikey
 
 	data		= json.dumps(data)
 

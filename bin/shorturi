@@ -11,9 +11,11 @@ parser.add_argument('URI', help='The URI to be shortened')
 
 args = parser.parse_args()
 
+apikey = "AIzaSyAczCHfpRagEDQ09LS3gd75_BXat3lifIk"
+
 def main():
     if args.googl:
-	print shorten.googl(args.URI)
+	print shorten.googl(args.URI, apikey)
 
 if __name__ == "__main__":
 	main()
