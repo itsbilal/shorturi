@@ -1,0 +1,19 @@
+#! /usr/bin/env python
+
+import os
+import sys
+import argparse
+from shorturi import shorten
+
+parser = argparse.ArgumentParser(description='Shorten long URIs using several URL shortening services')
+parser.add_argument('--googl', default=True, action='store_true', help='Use goo.gl to shorten URI')
+parser.add_argument('URI', help='The URI to be shortened')
+
+args = parser.parse_args()
+
+def main():
+    if args.googl:
+	print shorten.googl(args.URI)
+
+if __name__ == "__main__":
+	main()
