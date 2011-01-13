@@ -1,2 +1,4 @@
 build/*
 shorturi/*.pyc
+MANIFEST
+dist/*
