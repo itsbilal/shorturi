@@ -1,0 +1,14 @@
+shorturi is a URL-shortening python module which supports the following URL shortening services:
+
+  * goo.gl
+
+Support for more URL-shortening services will be added soon.
+
+This package also includes a script 'shorturi' which invokes the python module for shortening URIs.
+
+To install the python module and the shorturi script, run this command as root from the source root dir:
+
+python setup.py install
+
+
+This app is licensed under the MIT license. Terms of license can be found in the COPYING file.
