@@ -32,3 +32,11 @@ def isgd (longuri):
 	shorturi	= json.loads(response_data)['shorturl']
 
 	return shorturi		
+
+def cligs (longuri):
+	geturi		= "http://cli.gs/api/v1/cligs/create?" + urllib.urlencode({"url" : longuri})
+
+	request		= urllib2.Request(geturi)
+	response	= urllib2.urlopen(request)
+	
+	return response.read()

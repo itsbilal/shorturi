@@ -2,6 +2,7 @@ shorturi is a URL-shortening python module which supports the following URL shor
 
   * goo.gl
   * is.gd
+  * cli.gs
 
 Support for more URL-shortening services will be added soon.
 
