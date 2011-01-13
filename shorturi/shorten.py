@@ -1,5 +1,6 @@
 
 import json
+import urllib
 import urllib2
 
 def googl (longuri, apikey=None):
@@ -20,3 +21,14 @@ def googl (longuri, apikey=None):
 	shorturi	= json.loads(response_data)['id']
 
 	return shorturi
+
+def isgd (longuri):
+	geturi		= "http://is.gd/create.php?" + urllib.urlencode({"url" : longuri, "format" : "json"})
+
+	request		= urllib2.Request(geturi)
+	response	= urllib2.urlopen(request)
+
+	response_data	= response.read()
+	shorturi	= json.loads(response_data)['shorturl']
+
+	return shorturi		

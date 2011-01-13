@@ -6,16 +6,21 @@ import argparse
 from shorturi import shorten
 
 parser = argparse.ArgumentParser(description='Shorten long URIs using several URL shortening services')
-parser.add_argument('--googl', default=True, action='store_true', help='Use goo.gl to shorten URI')
+parser.add_argument('--googl', action='store_true', help='Use goo.gl to shorten URI (default)')
+parser.add_argument('--isgd', action='store_true', help='Use is.gd to shorten URI')
 parser.add_argument('URI', help='The URI to be shortened')
 
 args = parser.parse_args()
 
-apikey = "AIzaSyAczCHfpRagEDQ09LS3gd75_BXat3lifIk"
+g_apikey = "AIzaSyAczCHfpRagEDQ09LS3gd75_BXat3lifIk"
 
 def main():
     if args.googl:
-	print shorten.googl(args.URI, apikey)
+	print shorten.googl(args.URI, g_apikey)
+    elif args.isgd:
+	print shorten.isgd(args.URI)
+    else:
+	print shorten.googl(args.URI, g_apikey)
 
 if __name__ == "__main__":
 	main()
